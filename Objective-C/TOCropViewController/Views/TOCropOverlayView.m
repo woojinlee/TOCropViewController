@@ -22,7 +22,7 @@
 
 #import "TOCropOverlayView.h"
 
-static const CGFloat kTOCropOverLayerCornerWidth = 20.0f;
+static const CGFloat kTOCropOverLayerCornerWidth = 26.0f;
 static const CGFloat kTOCropOverLayerBorderWidth = 2.0f;
 
 @interface TOCropOverlayView ()
@@ -210,7 +210,7 @@ static const CGFloat kTOCropOverLayerBorderWidth = 2.0f;
     return newLine;
 }
 - (nonnull UIView *)createNewCircleView {
-    CGFloat circleDiameter = 18.f;
+    CGFloat circleDiameter = 16.f;
     UIView *newCircle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, circleDiameter, circleDiameter)];
     newCircle.backgroundColor = [UIColor whiteColor];
     newCircle.layer.borderWidth = 0.5;
