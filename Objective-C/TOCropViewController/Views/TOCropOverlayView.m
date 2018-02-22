@@ -214,7 +214,7 @@ static const CGFloat kTOCropOverLayerBorderWidth = 2.0f;
     UIView *newCircle = [[UIView alloc] initWithFrame:CGRectMake(0, 0, circleDiameter, circleDiameter)];
     newCircle.backgroundColor = [UIColor whiteColor];
     newCircle.layer.borderWidth = 0.5;
-    newCircle.layer.borderColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.6].CGColor;
+    newCircle.layer.borderColor = [[UIColor blackColor] colorWithAlphaComponent:0.15].CGColor;
     newCircle.layer.cornerRadius = circleDiameter / 2;
     newCircle.layer.masksToBounds = YES;
     [self addSubview:newCircle];
