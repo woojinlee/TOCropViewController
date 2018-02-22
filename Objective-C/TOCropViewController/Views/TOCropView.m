@@ -820,10 +820,9 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
         return YES;
     
     CGPoint tapPoint = [gestureRecognizer locationInView:self];
-    
     CGRect frame = self.gridOverlayView.frame;
-    CGRect innerFrame = CGRectInset(frame, 30.0f, 30.0f);
-    CGRect outerFrame = CGRectInset(frame, -30.0f, -30.0f);
+    CGRect innerFrame = CGRectInset(frame, 26.0f, 26.0f);
+    CGRect outerFrame = CGRectInset(frame, -26.0f, -26.0f);
     
     if (CGRectContainsPoint(innerFrame, tapPoint) || !CGRectContainsPoint(outerFrame, tapPoint))
         return NO;
