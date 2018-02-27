@@ -174,7 +174,7 @@ static const CGFloat kTOCropOverLayerBorderWidth = 2.0f;
     }];
     
     if (_displayHorizontalGridLines) {
-        self.horizontalGridLines = @[[self createNewLineView], [self createNewLineView]];
+        self.horizontalGridLines = @[[self createInnerLineView], [self createInnerLineView]];
     } else {
         self.horizontalGridLines = @[];
     }
@@ -189,7 +189,7 @@ static const CGFloat kTOCropOverLayerBorderWidth = 2.0f;
     }];
     
     if (_displayVerticalGridLines) {
-        self.verticalGridLines = @[[self createNewLineView], [self createNewLineView]];
+        self.verticalGridLines = @[[self createInnerLineView], [self createInnerLineView]];
     } else {
         self.verticalGridLines = @[];
     }
@@ -205,7 +205,13 @@ static const CGFloat kTOCropOverLayerBorderWidth = 2.0f;
 
 - (nonnull UIView *)createNewLineView {
     UIView *newLine = [[UIView alloc] initWithFrame:CGRectZero];
-    newLine.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.4]; 
+    newLine.backgroundColor = [UIColor whiteColor];
+    [self addSubview:newLine];
+    return newLine;
+}
+- (nonnull UIView *)createInnerLineView {
+    UIView *newLine = [[UIView alloc] initWithFrame:CGRectZero];
+    newLine.backgroundColor = [[UIColor whiteColor] colorWithAlphaComponent:0.4];
     [self addSubview:newLine];
     return newLine;
 }
