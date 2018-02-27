@@ -33,6 +33,7 @@ typedef NS_ENUM(NSInteger, TOCropViewCroppingStyle) {
 
 @protocol TOCropViewDelegate <NSObject>
 
+- (void)cropViewDidEndEditing:(nonnull TOCropView *)cropView;
 - (void)cropViewDidBecomeResettable:(nonnull TOCropView *)cropView;
 - (void)cropViewDidBecomeNonResettable:(nonnull TOCropView *)cropView;
 
