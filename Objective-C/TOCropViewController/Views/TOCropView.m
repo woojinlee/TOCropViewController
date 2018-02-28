@@ -1623,6 +1623,8 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
             } completion:^(BOOL complete) {
                 self.rotateAnimationInProgress = NO;
                 [snapshotView removeFromSuperview];
+                if ([self.delegate respondsToSelector:@selector(cropViewDidEndEditing:)])
+                    [self.delegate cropViewDidEndEditing:self];
             }];
         }];
     }
