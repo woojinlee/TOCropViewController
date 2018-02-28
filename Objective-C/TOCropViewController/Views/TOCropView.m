@@ -1613,8 +1613,10 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
             
             self.backgroundContainerView.alpha = 0.0f;
             self.gridOverlayView.alpha = 0.0f;
-            
             self.translucencyView.alpha = 1.0f;
+            
+            if ([self.delegate respondsToSelector:@selector(cropViewDidEndEditing:)])
+                [self.delegate cropViewDidEndEditing:self];
             
             [UIView animateWithDuration:0.45f animations:^{
                 snapshotView.alpha = 0.0f;
@@ -1623,8 +1625,6 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
             } completion:^(BOOL complete) {
                 self.rotateAnimationInProgress = NO;
                 [snapshotView removeFromSuperview];
-                if ([self.delegate respondsToSelector:@selector(cropViewDidEndEditing:)])
-                    [self.delegate cropViewDidEndEditing:self];
             }];
         }];
     }
