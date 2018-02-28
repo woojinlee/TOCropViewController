@@ -1669,8 +1669,10 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
             
             self.backgroundContainerView.alpha = 0.0f;
             self.gridOverlayView.alpha = 0.0f;
-            
             self.translucencyView.alpha = 1.0f;
+            
+            if ([self.delegate respondsToSelector:@selector(cropViewDidEndEditing:)])
+                [self.delegate cropViewDidEndEditing:self];
             
             [UIView animateWithDuration:0.45f animations:^{
                 snapshotView.alpha = 0.0f;
@@ -1679,6 +1681,7 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
             } completion:^(BOOL complete) {
                 self.rotateAnimationInProgress = NO;
                 [snapshotView removeFromSuperview];
+<<<<<<< HEAD
                 
                 // If the aspect ratio lock is not enabled, allow a swap
                 // If the aspect ratio lock is on, allow a aspect ratio swap
@@ -1690,6 +1693,8 @@ typedef NS_ENUM(NSInteger, TOCropViewOverlayEdge) {
                     //This will animate the aspect ratio back to the desired locked ratio after the image is rotated.
                     [self setAspectRatio:self.aspectRatio animated:animated];
                 }
+=======
+>>>>>>> minor fix
             }];
         }];
     }
